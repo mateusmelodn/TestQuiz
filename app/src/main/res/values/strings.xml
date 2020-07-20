@@ -19,9 +19,13 @@
     <string name="do_not_know">Não sei</string>
     <string name="next_word">Próximo</string>
     <string name="delete_word">Deletar</string>
-    <string name="cancel_action">Cancelar ação</string>
+    <string name="cancel_action">Cancelar</string>
     <string name="update_word">Atualizar palavra</string>
     <string name="invalid_language">Idioma inválido</string>
     <string name="invalid_primary_word">Palavra inválida</string>
     <string name="invalid_translated_word">Tradução inválida</string>
+    <string name="delete_language">Deletar idioma</string>
+    <string name="warning">Aviso</string>
+    <string name="delete_language_info">Ao deletar um idioma, você também deletará todas as palavras associadas</string>
+    <string name="delete">Deletar</string>
 </resources>

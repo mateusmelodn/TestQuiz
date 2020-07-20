@@ -51,6 +51,12 @@ abstract class AppDatabase : RoomDatabase() {
             appDataBase.wordDao().update(word)
         }
 
+        fun deleteLanguageAndAllWordsAssociated(languageTitle: String, context: Context) {
+            val appDataBase = Singleton.getDBInstance(context)
+            appDataBase.languageDao().delete(Language(languageTitle))
+            appDataBase.wordDao().deleteAllWords(languageTitle)
+        }
+
         fun deleteWord(word: Word, context: Context) {
             val appDataBase = Singleton.getDBInstance(context)
             appDataBase.wordDao().delete(word)

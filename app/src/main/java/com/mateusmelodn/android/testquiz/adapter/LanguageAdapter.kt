@@ -39,6 +39,11 @@ class LanguageAdapter(private var languages: List<Language>, private val activit
         holder.itemView.setOnClickListener {
             onLanguageCardClick(language)
         }
+
+        holder.itemView.setOnLongClickListener {
+            activity.showDialogDeleteLanguage(language)
+            true
+        }
     }
 
     // Pass data through intent
