@@ -1,0 +1,27 @@
+<resources>
+    <string name="app_name">TestQuiz</string>
+    <string name="language">Idioma</string>
+    <string name="add_language">Adicionar idioma</string>
+    <string name="new_language">Novo idioma</string>
+    <string name="language_name">Nome do idioma</string>
+    <string name="fill_in_here">Preencha aqui</string>
+    <string name="save_language">Salvar idioma</string>
+    <string name="discard_language">Descartar idioma</string>
+    <string name="add_word">Adicionar palavra</string>
+    <string name="primary_word">Original</string>
+    <string name="translated_word">Tradução</string>
+    <string name="you_have_no_words">Você não tem palavras cadastradas</string>
+    <string name="you_have_no_languages">Você não tem idiomas cadastrados</string>
+    <string name="word">Palavra</string>
+    <string name="save_word">Salvar</string>
+    <string name="start_quiz">Iniciar</string>
+    <string name="verify_answer">Verificar</string>
+    <string name="do_not_know">Não sei</string>
+    <string name="next_word">Próximo</string>
+    <string name="delete_word">Deletar</string>
+    <string name="cancel_action">Cancelar ação</string>
+    <string name="update_word">Atualizar palavra</string>
+    <string name="invalid_language">Idioma inválido</string>
+    <string name="invalid_primary_word">Palavra inválida</string>
+    <string name="invalid_translated_word">Tradução inválida</string>
+</resources>

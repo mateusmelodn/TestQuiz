@@ -1,0 +1,171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="@dimen/activity_content_padding">
+
+    <!--    CARD VIEW FRONT-->
+    <LinearLayout
+        android:id="@+id/word_front_card_view"
+        android:background="@drawable/word_card_default_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/current_primary_word_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto_black"
+            android:gravity="center"
+            android:text="@string/primary_word"
+            android:textSize="@dimen/quiz_card_default_text_size" />
+
+    </LinearLayout>
+
+    <!--    CARD VIEW BACK-->
+    <LinearLayout
+        android:id="@+id/word_back_card_view"
+        android:background="@drawable/word_card_default_background"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_margin="10dp"
+        android:alpha="0"
+        app:layout_constraintDimensionRatio="1:1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/right_answer_image_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp"
+                android:src="@drawable/ic_check"
+                android:visibility="gone" />
+
+            <ImageView
+                android:id="@+id/wrong_answer_image_view"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_margin="20dp"
+                android:src="@android:drawable/stat_sys_warning"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/current_translated_word_text_view"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:text="@string/translated_word"
+                android:textColor="@color/babyPowder"
+                android:textSize="@dimen/quiz_card_default_text_size" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user_translation_input_layout"
+        style="@style/TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:hint="@string/translated_word"
+        app:boxCornerRadiusBottomEnd="@dimen/input_corner_radius"
+        app:boxCornerRadiusBottomStart="@dimen/input_corner_radius"
+        app:boxCornerRadiusTopEnd="@dimen/input_corner_radius"
+        app:boxCornerRadiusTopStart="@dimen/input_corner_radius"
+        app:layout_constraintEnd_toEndOf="@+id/word_front_card_view"
+        app:layout_constraintStart_toStartOf="@+id/word_front_card_view"
+        app:layout_constraintTop_toBottomOf="@+id/word_front_card_view">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/user_translation_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/roboto_regular"
+            android:inputType="textCapWords"
+            android:maxLines="1"
+            android:textSize="@dimen/edit_text_default_text_size" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <Button
+        android:id="@+id/next_word_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_default_height"
+        android:layout_margin="@dimen/button_default_margin"
+        android:fontFamily="@font/roboto_bold"
+        android:onClick="onNextWordButtonClick"
+        android:text="@string/next_word"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/button_default_text_size"
+        android:visibility="gone"
+        app:cornerRadius="@dimen/button_default_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="@dimen/button_default_stroke_width" />
+
+    <Button
+        android:id="@+id/show_answer_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_default_height"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="@dimen/button_default_margin"
+        android:fontFamily="@font/roboto_bold"
+        android:onClick="onShowAnswerButtonClick"
+        android:text="@string/do_not_know"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/button_default_text_size"
+        app:cornerRadius="@dimen/button_default_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/verify_answer_button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="@dimen/button_default_stroke_width" />
+
+    <Button
+        android:id="@+id/verify_answer_button"
+        style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+        android:layout_width="0dp"
+        android:layout_height="@dimen/button_default_height"
+        android:layout_marginStart="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginBottom="@dimen/button_default_margin"
+        android:fontFamily="@font/roboto_bold"
+        android:onClick="onVerifyAnswerButtonClick"
+        android:text="@string/verify_answer"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/button_default_text_size"
+        app:cornerRadius="@dimen/button_default_radius"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/show_answer_button"
+        app:strokeColor="@color/colorPrimary"
+        app:strokeWidth="@dimen/button_default_stroke_width" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

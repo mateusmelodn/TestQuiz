@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#FA824C</color>
+    <color name="colorPrimaryDark">#FA824C</color>
+    <color name="colorAccent">#FA824C</color>
+    <color name="mandarim">#FA824C</color>
+    <color name="babyPowder">#FAFFFD</color>
+    <color name="divider">#F2F2F2</color>
+    <color name="success">#88D498</color>
+    <color name="failed">#F4ACB7</color>
+</resources>
